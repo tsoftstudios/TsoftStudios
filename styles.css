@@ -1,0 +1,76 @@
+/* TSoftStudios Custom Stylesheet */
+
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 0.35;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }
+}
+
+.glow-ambient {
+    animation: pulseGlow 8s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050814;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #38bdf8;
+}
+
+/* Glassmorphism Card Effect */
+.glass-panel {
+    background: rgba(13, 20, 42, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+/* Filter Tab Styles */
+.filter-btn.active {
+    background: linear-gradient(135deg, #2563eb, #0284c7);
+    color: #ffffff;
+    box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
+}
+
+/* Modal Smooth Fade */
+#appModal {
+    transition: opacity 0.25s ease-in-out;
+}
+
+#appModal.hidden {
+    display: none;
+    opacity: 0;
+}
+
+#appModal:not(.hidden) {
+    display: flex;
+    opacity: 1;
+}
+
+/* Selection */
+::selection {
+    background-color: #38bdf8;
+    color: #050814;
+}
+

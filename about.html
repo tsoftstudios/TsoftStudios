@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | TSoftStudios - Mobile App Development Studio</title>
+    <meta name="description" content="Learn about TSoftStudios, an independent mobile app studio creating productivity, creative, and utility apps for Android and iOS.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#070b19',
+                            darker: '#030712',
+                            card: '#0f172a',
+                            border: '#1e293b',
+                            primary: '#2563eb',
+                            electric: '#38bdf8',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#050814] text-slate-200 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Ambient Glow Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[450px] bg-gradient-to-tr from-blue-600/20 via-cyan-500/15 to-purple-600/10 blur-[130px] rounded-full"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#070b19]/80 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-blue-600 to-cyan-400 p-[2px] shadow-lg shadow-blue-500/20">
+                    <div class="w-full h-full bg-[#0a0f24] rounded-[14px] flex items-center justify-center font-bold text-xl text-white">
+                        <span class="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">T</span>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight text-white flex items-center gap-1.5">
+                        TSoft<span class="text-cyan-400">Studios</span>
+                    </span>
+                    <span class="block text-[11px] font-medium tracking-wider uppercase text-slate-400">About Studio</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+                <a href="about.html" class="text-cyan-400 transition">About Us</a>
+                <a href="apps.html" class="hover:text-cyan-400 transition">Our Apps</a>
+                <a href="support.html" class="hover:text-cyan-400 transition">Support</a>
+                <a href="privacy.html" class="hover:text-cyan-400 transition">Privacy</a>
+            </nav>
+
+            <button id="mobileMenuBtn" aria-label="Toggle navigation menu" class="md:hidden text-slate-400 hover:text-white p-2 text-xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-[#0a0f24] border-b border-slate-800 px-6 py-6 space-y-4">
+            <a href="index.html" class="block text-slate-300 hover:text-cyan-400 font-medium py-2">Home</a>
+            <a href="about.html" class="block text-cyan-400 font-semibold py-2">About Us</a>
+            <a href="apps.html" class="block text-slate-300 hover:text-cyan-400 font-medium py-2">Our Applications</a>
+            <a href="support.html" class="block text-slate-300 hover:text-cyan-400 font-medium py-2">Support & Helpdesk</a>
+            <a href="privacy.html" class="block text-slate-300 hover:text-cyan-400 font-medium py-2">Privacy Policy</a>
+        </div>
+    </header>
+
+    <main class="relative z-10 flex-grow py-16">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Hero Intro -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-cyan-300 text-xs font-semibold mb-4">
+                    <i class="fa-solid fa-code"></i> Engineering Philosophy
+                </div>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">Who We Are</h1>
+                <p class="mt-4 text-slate-400 text-base sm:text-lg leading-relaxed">
+                    TSoftStudios is an independent mobile application development studio committed to building thoughtful, high-performance, and privacy-respecting digital tools for modern users.
+                </p>
+            </div>
+
+            <!-- Mission & Vision -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16" id="vision">
+                <div class="p-8 rounded-3xl bg-[#090f24] border border-blue-500/20 shadow-xl relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-cyan-400 text-xl mb-6">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-3">Our Mission</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        To create accessible, innovative, and reliable mobile applications that make everyday digital experiences simpler and smarter. We focus on removing friction from daily routines, creative media workflows, and productivity management.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-[#090f24] border border-cyan-500/20 shadow-xl relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-300 text-xl mb-6">
+                        <i class="fa-solid fa-compass"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-3">Our Vision</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        To build a growing ecosystem of useful mobile applications that empower millions of people worldwide to work smarter, create freely, and learn continuously, while maintaining uncompromising user privacy standards.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Development Philosophy -->
+            <div class="mb-16">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">Our Development Philosophy</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="p-6 rounded-2xl bg-[#0a1026] border border-slate-800">
+                        <div class="text-cyan-400 text-2xl mb-4"><i class="fa-solid fa-gauge-high"></i></div>
+                        <h3 class="text-lg font-bold text-white mb-2">Simplicity & Speed</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                            No cluttered menus or unnecessary complexity. Our apps load instantaneously, conserve system memory, and let you get things done with minimum taps.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-[#0a1026] border border-slate-800">
+                        <div class="text-emerald-400 text-2xl mb-4"><i class="fa-solid fa-fingerprint"></i></div>
+                        <h3 class="text-lg font-bold text-white mb-2">Privacy by Default</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                            We adopt offline-first architectures whenever possible. Your habit logs, private notes, and scanned documents remain stored securely on your own device.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-[#0a1026] border border-slate-800">
+                        <div class="text-purple-400 text-2xl mb-4"><i class="fa-solid fa-microchip"></i></div>
+                        <h3 class="text-lg font-bold text-white mb-2">Modern Technology</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                            Crafted with cutting-edge mobile SDKs, on-device machine learning, adaptive Dark/Light themes, and fluid 120Hz native animations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Publisher & Developer Information -->
+            <div class="p-8 sm:p-10 rounded-3xl bg-[#070d1e] border border-slate-800/90 shadow-xl">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-6 border-b border-slate-800">
+                    <div>
+                        <span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider">Official Publisher Identity</span>
+                        <h2 class="text-2xl font-bold text-white mt-1">TSoftStudios</h2>
+                        <p class="text-xs text-slate-400 mt-1">Registered publisher for Google Play Console and Apple Developer platforms.</p>
+                    </div>
+                    <div class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700 text-xs text-slate-300">
+                        Status: <span class="text-emerald-400 font-semibold">Active Developer</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6 text-sm">
+                    <div>
+                        <h4 class="text-xs uppercase font-semibold text-slate-500 mb-1">Developer Inquiries & Support</h4>
+                        <a href="mailto:tsoftstudios2026@gmail.com" class="text-cyan-400 font-medium hover:underline">
+                            tsoftstudios2026@gmail.com
+                        </a>
+                    </div>
+                    <div>
+                        <h4 class="text-xs uppercase font-semibold text-slate-500 mb-1">Ecosystem Focus</h4>
+                        <p class="text-slate-300">Productivity, AI Creative, PDF, Utilities & Education</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-slate-800 text-xs text-slate-400 leading-relaxed">
+                    <strong>Developer Statement:</strong> TSoftStudios maintains complete responsibility for all mobile products published under our brand. All applications strictly adhere to the Google Play Developer Program Policies and Apple App Store Review Guidelines.
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#030611] border-t border-slate-800/80 text-slate-400 text-sm py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 TSoftStudios. All rights reserved.</p>
+            <div class="flex gap-6 text-xs">
+                <a href="privacy.html" class="hover:text-cyan-400">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-cyan-400">Terms of Service</a>
+                <a href="support.html" class="hover:text-cyan-400">Contact Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

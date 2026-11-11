@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications Portfolio | TSoftStudios</title>
+    <meta name="description" content="Explore TSoftStudios' suite of mobile applications: DayFlow routine tracker, AI photo & video editors, PDF productivity tools, utilities, and learning apps.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#070b19',
+                            darker: '#030712',
+                            card: '#0f172a',
+                            border: '#1e293b',
+                            primary: '#2563eb',
+                            electric: '#38bdf8',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#050814] text-slate-200 font-sans antialiased selection:bg-cyan-500 selection:text-black min-h-screen flex flex-col justify-between">
+
+    <!-- Ambient Glow Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[450px] bg-gradient-to-tr from-blue-600/20 via-cyan-500/15 to-purple-600/10 blur-[130px] rounded-full"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#070b19]/80 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-blue-600 to-cyan-400 p-[2px] shadow-lg shadow-blue-500/20">
+                    <div class="w-full h-full bg-[#0a0f24] rounded-[14px] flex items-center justify-center font-bold text-xl text-white">
+                        <span class="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">T</span>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight text-white flex items-center gap-1.5">
+                        TSoft<span class="text-cyan-400">Studios</span>
+                    </span>
+                    <span class="block text-[11px] font-medium tracking-wider uppercase text-slate-400">App Ecosystem</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+                <a href="about.html" class="hover:text-cyan-400 transition">About Us</a>
+                <a href="apps.html" class="text-cyan-400 transition">Our Apps</a>
+                <a href="support.html" class="hover:text-cyan-400 transition">Support</a>
+                <a href="privacy.html" class="hover:text-cyan-400 transition">Privacy</a>
+            </nav>
+
+            <button id="mobileMenuBtn" aria-label="Toggle navigation menu" class="md:hidden text-slate-400 hover:text-white p-2 text-xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-[#0a0f24] border-b border-slate-800 px-6 py-6 space-y-4">
+            <a href="index.html" class="block text-slate-300 hover:text-cyan-400 font-medium py-2">Home</a>
+            <a href="about.html" class="block text-slate-300 hover:text-cyan-400 font-medium py-2">About Us</a>
+            <a href="apps.html" class="block text-cyan-400 font-semibold py-2">Our Applications</a>
+            <a href="support.html" class="block text-slate-300 hover:text-cyan-400 font-medium py-2">Support & Helpdesk</a>
+            <a href="privacy.html" class="block text-slate-300 hover:text-cyan-400 font-medium py-2">Privacy Policy</a>
+        </div>
+    </header>
+
+    <main class="relative z-10 flex-grow py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Title -->
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-cyan-300 text-xs font-semibold mb-4">
+                    <i class="fa-solid fa-layer-group"></i> Mobile Applications
+                </div>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">Our App Portfolio</h1>
+                <p class="mt-4 text-slate-400 text-base sm:text-lg">
+                    Discover intuitive mobile software engineered to empower your day-to-day productivity, creativity, and knowledge.
+                </p>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-12" id="filterTabs">
+                <button class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition" data-filter="all">
+                    All Apps
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition text-slate-400 hover:text-white" data-filter="productivity">
+                    Productivity
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition text-slate-400 hover:text-white" data-filter="creative">
+                    Photo & Video
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition text-slate-400 hover:text-white" data-filter="pdf">
+                    PDF & Documents
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition text-slate-400 hover:text-white" data-filter="utility">
+                    Utilities
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition text-slate-400 hover:text-white" data-filter="learning">
+                    Learning
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition text-slate-400 hover:text-white" data-filter="comingsoon">
+                    Coming Soon
+                </button>
+            </div>
+
+            <!-- Apps Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="appsGrid">
+
+                <!-- App 1: DayFlow -->
+                <div class="app-card rounded-2xl bg-[#0c1228] border border-slate-800/90 hover:border-cyan-500/50 transition duration-300 flex flex-col justify-between overflow-hidden group shadow-xl" data-category="productivity" id="dayflow-card">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-blue-600 to-cyan-500 flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-blue-500/20 group-hover:scale-105 transition">
+                                <i class="fa-solid fa-calendar-check"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-blue-500/20 text-cyan-300 border border-blue-500/30">
+                                Productivity
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">DayFlow</h3>
+                        <p class="text-xs text-cyan-400 mb-3 font-medium">Daily Routine & Habit Tracker</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            All-in-one daily routine organizer, habit streak builder, prioritized task manager, expense log, and personal wellness notes with offline-first performance.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-4 text-[11px]">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Habit Streaks</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Expense Tracker</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Offline-first</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
+                        <button onclick="openAppModal('dayflow')" class="text-xs font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5">
+                            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                        <div class="flex items-center gap-2 text-slate-400">
+                            <i class="fa-brands fa-google-play hover:text-white cursor-pointer" title="Google Play"></i>
+                            <i class="fa-brands fa-apple hover:text-white cursor-pointer" title="iOS App Store"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App 2: Photo & Video Editor Apps -->
+                <div class="app-card rounded-2xl bg-[#0c1228] border border-slate-800/90 hover:border-purple-500/50 transition duration-300 flex flex-col justify-between overflow-hidden group shadow-xl" data-category="creative" id="creative-card">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-purple-500/20 group-hover:scale-105 transition">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                                Creative
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">Lumix Studio AI</h3>
+                        <p class="text-xs text-purple-400 mb-3 font-medium">Photo & Video Creative Editor</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Next-gen mobile editing suite with smart AI background removal, studio color grading filters, portrait enhancements, and high-framerate lightweight video trimming.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-4 text-[11px]">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">AI Backgrounds</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Portrait Filter</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Video Trimmer</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
+                        <button onclick="openAppModal('creative')" class="text-xs font-semibold text-purple-400 hover:text-purple-300 flex items-center gap-1.5">
+                            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                        <div class="flex items-center gap-2 text-slate-400">
+                            <i class="fa-brands fa-google-play hover:text-white cursor-pointer" title="Google Play"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App 3: PDF Applications -->
+                <div class="app-card rounded-2xl bg-[#0c1228] border border-slate-800/90 hover:border-red-500/50 transition duration-300 flex flex-col justify-between overflow-hidden group shadow-xl" data-category="pdf" id="pdf-card">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-rose-600 to-red-500 flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-red-500/20 group-hover:scale-105 transition">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-red-500/20 text-red-300 border border-red-500/30">
+                                PDF & Docs
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">DocuMaster PDF</h3>
+                        <p class="text-xs text-red-400 mb-3 font-medium">Document Scanner, Converter & Reader</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            High-speed PDF workstation. Scan physical receipts and contracts with automatic edge detection, merge, split, compress files, and convert images to PDF securely offline.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-4 text-[11px]">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Doc Scanner</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Merge & Split</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Zero Cloud Upload</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
+                        <button onclick="openAppModal('pdf')" class="text-xs font-semibold text-red-400 hover:text-red-300 flex items-center gap-1.5">
+                            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                        <div class="flex items-center gap-2 text-slate-400">
+                            <i class="fa-brands fa-google-play hover:text-white cursor-pointer" title="Google Play"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App 4: Utility & Tools -->
+                <div class="app-card rounded-2xl bg-[#0c1228] border border-slate-800/90 hover:border-amber-500/50 transition duration-300 flex flex-col justify-between overflow-hidden group shadow-xl" data-category="utility" id="utility-card">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-600 to-orange-500 flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-amber-500/20 group-hover:scale-105 transition">
+                                <i class="fa-solid fa-toolbox"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                                Utilities
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">ZapTools Utility Hub</h3>
+                        <p class="text-xs text-amber-400 mb-3 font-medium">All-in-One Everyday Digital Toolkit</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Replace 10 different single-purpose apps with one lightweight toolkit. Includes unit conversion, scientific calculator, device hardware info, file hash checker, and QR scanner.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-4 text-[11px]">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Converters</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Device Sensors</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Battery Saver</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
+                        <button onclick="openAppModal('utility')" class="text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1.5">
+                            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                        <div class="flex items-center gap-2 text-slate-400">
+                            <i class="fa-brands fa-google-play hover:text-white cursor-pointer" title="Google Play"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App 5: Learning Applications -->
+                <div class="app-card rounded-2xl bg-[#0c1228] border border-slate-800/90 hover:border-emerald-500/50 transition duration-300 flex flex-col justify-between overflow-hidden group shadow-xl" data-category="learning" id="learning-card">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                                Learning
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">CodeSprout Learning</h3>
+                        <p class="text-xs text-emerald-400 mb-3 font-medium">Interactive Programming & Tech Skill</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Bite-sized mobile coding practice, tech flashcards, interactive algorithm challenges, and syntax reference designed for beginners and busy developers.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-4 text-[11px]">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Code Puzzles</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Spaced Repetition</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Certificates</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
+                        <button onclick="openAppModal('learning')" class="text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5">
+                            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                        <div class="flex items-center gap-2 text-slate-400">
+                            <i class="fa-brands fa-google-play hover:text-white cursor-pointer" title="Google Play"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App 6: Coming Soon Pipeline -->
+                <div class="app-card rounded-2xl bg-[#090e21] border border-cyan-500/30 flex flex-col justify-between overflow-hidden shadow-xl" data-category="comingsoon" id="comingsoon-card">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-16 h-16 rounded-2xl bg-cyan-600/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl font-bold">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                                In Development
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">EchoNotes AI Audio</h3>
+                        <p class="text-xs text-cyan-400 mb-3 font-medium">Smart Voice Memo & Meeting Summarizer</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Currently in closed alpha. Automatically records, transcribes, cleans audio noise, and generates actionable summary bullet points directly on your smartphone.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-4 text-[11px]">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-400">On-device AI</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-400">Audio Transcription</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-400">Target Q4 2026</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
+                        <a href="support.html?topic=beta" class="text-xs font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5">
+                            Join Early Access List <i class="fa-solid fa-envelope text-[10px]"></i>
+                        </a>
+                        <span class="text-xs text-slate-500">Beta Testing</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Interactive App Details Modal Drawer -->
+    <div id="appModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#0a0f24] border border-slate-700 rounded-3xl p-6 sm:p-8 shadow-2xl text-left">
+            <button onclick="closeAppModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white p-2 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div id="modalContent">
+                <!-- Dynamically populated via script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#030611] border-t border-slate-800/80 text-slate-400 text-sm py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 TSoftStudios. All rights reserved.</p>
+            <div class="flex gap-6 text-xs">
+                <a href="privacy.html" class="hover:text-cyan-400">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-cyan-400">Terms of Service</a>
+                <a href="support.html" class="hover:text-cyan-400">Contact Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
